@@ -13,7 +13,7 @@ loop do
   input = gets.chomp.strip
   exit if input == 'q'
   print_help unless iv.validate(input)
-  calc.process_input(input)
+  puts calc.process_input(input)
 end
 
 
