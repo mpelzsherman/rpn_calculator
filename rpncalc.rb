@@ -12,8 +12,12 @@ loop do
   print '> '
   input = gets.chomp.strip
   exit if input == 'q'
-  print_help unless iv.validate(input)
-  puts calc.process_input(input)
+  if iv.validate(input)
+    puts calc.process_input(input)
+  else
+    print_help
+    next
+  end
 end
 
 
