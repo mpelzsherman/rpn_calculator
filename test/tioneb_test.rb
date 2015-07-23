@@ -4,6 +4,10 @@ RSpec.describe Tioneb, "#process_input" do
 
   subject { Tioneb.new }
 
+  it "should raise an exception given invalid input" do
+    expect { subject.process_input('a') }.to raise_error(ArgumentError)
+  end
+
   it "should add 2 numbers" do
     expect(subject.process_input('5')).to eq 5.0
     expect(subject.process_input('8')).to eq 8.0
