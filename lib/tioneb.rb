@@ -13,7 +13,7 @@ class Tioneb
     elsif @iv.is_operator?(input)
       @stack = Array(@stack.reduce(input.to_sym))
     else
-      raise InvalidArgumentException "Sorry, I don't know how to process #{input}."
+      raise ArgumentError, "Sorry, I don't know how to process #{input}."
     end
     @stack.last
   end
