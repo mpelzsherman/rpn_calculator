@@ -40,4 +40,12 @@ RSpec.describe Tioneb, "#process_input" do
     expect(subject.process_input('*')).to eq 24.0
   end
 
+  it "should support arbitrary operand limits" do
+    calculator = Tioneb.new(3)
+    expect(calculator.process_input('5')).to eq 5.0
+    expect(calculator.process_input('8')).to eq 8.0
+    expect(calculator.process_input('-3')).to eq -3.0
+    expect(calculator.process_input('+')).to eq 10.0
+  end
+
 end
